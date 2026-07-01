@@ -1,7 +1,0 @@
-Gate 0 number: 1.466025e-02
-S8 table:
-LCDM: 0.818262
-GREA cs=1.0: 0.822610
-GREA cs=0.0: 0.821907
-gamma_slope(cs=1.0): 3.927781e-03 positive=True
-gamma_slope(cs=0.0): 3.927781e-03 positive=True

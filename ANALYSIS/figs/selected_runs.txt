@@ -1,1 +1,3 @@
-grea_Run3_CMB-SPA+PP+DESI	#1f77b4	grea_Run3_CMB-SPA+PP+DESI
+grea_Run1_PP+DESI	#1f77b4	grea_Run1_PP+DESI
+grea_Run3_CMB-SPA+PP+DESI	#ff7f0e	grea_Run3_CMB-SPA+PP+DESI
+grea_Run4_PPS+DESI	#2ca02c	grea_Run4_PPS+DESI

@@ -1,0 +1,196 @@
+theory:
+  camb:
+    extra_args:
+      AccuracyBoost: 1
+      bbn_predictor: PArthENoPE_880.2_standard.dat
+      halofit_version: mead2020
+      lAccuracyBoost: 1
+      lSampleBoost: 1
+      lens_margin: 1250
+      lens_potential_accuracy: 4
+      lmax: 6000
+      mnu: 0.06
+      nnu: 3.044
+      num_massive_neutrinos: 3
+      neutrino_hierarchy: degenerate
+      dark_energy_model: ppf
+      theta_H0_range:
+      - 20
+      - 100
+
+likelihood:
+  bao.desi_dr2: null
+  sn.pantheonplusshoes: null
+
+params:
+  # LCDM parameters
+  logA:
+    prior:
+      min: 1.61
+      max: 3.91
+    ref:
+      dist: norm
+      loc: 3.05
+      scale: 0.001
+    proposal: 0.001
+    latex: \log(10^{10} A_\mathrm{s})
+    drop: true
+  ns:
+    prior:
+      min: 0.8
+      max: 1.2
+    ref:
+      dist: norm
+      loc: 0.965
+      scale: 0.004
+    proposal: 0.002
+    latex: n_\mathrm{s}
+  H0:
+    prior:
+      min: 40
+      max: 100
+    ref:
+      dist: norm
+      loc: 67
+      scale: 2
+    proposal: 2
+    latex: H_0
+  tau: 0.06
+  ombh2:
+    prior:
+      min: 0.005
+      max: 0.1
+    ref:
+      dist: norm
+      loc: 0.0224
+      scale: 0.0001
+    proposal: 0.0001
+    latex: \Omega_\mathrm{b} h^2
+  omch2:
+    prior:
+      min: 0.001
+      max: 0.99
+    ref:
+      dist: norm
+      loc: 0.12
+      scale: 0.001
+    proposal: 0.0005
+    latex: \Omega_\mathrm{c} h^2
+
+  # Example extra model parameter
+  # p_extra_param:
+  #  prior:
+  #    min: 0
+  #    max: 1
+  #  ref:
+  #    dist: norm
+  #    loc: 0.12
+  #    scale: 0.001
+  #  proposal: 0.0005
+  #  latex: p_\mathrm{extra}
+
+  # Derived and other parameters
+  omegam:
+    latex: \Omega_\mathrm{m}
+    derived: True
+  omegamh2:
+    derived: 'lambda omegam, H0: omegam*(H0/100)**2'
+    latex: \Omega_\mathrm{m} h^2
+  omegal:
+    latex: \Omega_\Lambda
+    derived: True
+  As:
+    value: 'lambda logA: 1e-10*np.exp(logA)'
+    derived: True
+    latex: A_\mathrm{s}
+  YHe:
+    latex: Y_\mathrm{P}
+    derived: True
+  zrei:
+    latex: z_\mathrm{re}
+    derived: True
+  sigma8:
+    latex: \sigma_8
+    derived: True
+  s8h5:
+    derived: 'lambda sigma8, H0: sigma8*(H0*1e-2)**(-0.5)'
+    latex: \sigma_8/h^{0.5}
+  s8omegamp5:
+    derived: 'lambda sigma8, omegam: sigma8*omegam**0.5'
+    latex: \sigma_8 \Omega_\mathrm{m}^{0.5}
+  s8omegamp25:
+    derived: 'lambda sigma8, omegam: sigma8*omegam**0.25'
+    latex: \sigma_8 \Omega_\mathrm{m}^{0.25}
+  A:
+    derived: 'lambda As: 1e9*As'
+    latex: 10^9 A_\mathrm{s}
+  clamp:
+    derived: 'lambda As, tau: 1e9*As*np.exp(-2*tau)'
+    latex: 10^9 A_\mathrm{s} e^{-2\tau}
+  age:
+    latex: '{\rm{Age}}/\mathrm{Gyr}'
+    derived: True
+  rdrag:
+    latex: r_\mathrm{drag}
+    derived: True
+  thetastar:
+    latex: 100\theta_\star
+    derived: true
+  zstar:
+    latex: z_\star
+    derived: true
+  rstar:
+    latex: r_\star
+    derived: true
+  DAstar:
+    latex: D_A(z_\star)
+    derived: true
+  zdrag:
+    latex: z_\mathrm{d}
+    derived: true
+  zeq:
+    latex: z_\mathrm{eq}
+    derived: true
+  keq:
+    latex: k_\mathrm{eq}
+    derived: true
+  S8:
+    derived: ' lambda sigma8, omegam: sigma8*(omegam/0.3)**0.5'
+    latex: S_8
+  Y_p:
+    latex: Y_P^\mathrm{BBN}
+    derived: true
+  omegamh3:
+    derived: 'lambda omegam, H0: omegam*(H0/100)**3'
+    latex: \Omega_\mathrm{m} h^3
+  rdh:
+    derived: 'lambda rdrag, H0: rdrag*(H0/100)'
+    latex: r_\mathrm{drag} h
+  DHBBN:
+    derived: 'lambda DH: 10**5*DH'
+    latex: 10^5 \mathrm{D}/\mathrm{H}
+  kd:
+    latex: k_D
+    derived: true
+  thetad:
+    latex: 100\theta_D
+    derived: true
+  thetaeq:
+    latex: 100\theta_\mathrm{eq}
+    derived: true
+  thetarseq:
+    latex: 100\theta_{\mathrm{s,eq}
+    derived: true
+    
+sampler:
+  mcmc:
+    covmat: auto
+    drag: false
+    oversample_power: 0.4
+    proposal_scale: 1.9
+    Rminus1_stop: 0.02
+    Rminus1_cl_stop: 0.2
+
+output: chains/chains
+
+ 

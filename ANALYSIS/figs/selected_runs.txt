@@ -1,6 +1,7 @@
 grea_Run1_PP+DESI	#1f77b4	grea_Run1_PP+DESI
-grea_Run2_CMB-SPA	#ff7f0e	grea_Run2_CMB-SPA
-grea_Run3_CMB-SPA+PP+DESI	#2ca02c	grea_Run3_CMB-SPA+PP+DESI
-grea_Run4_PPS+DESI	#d62728	grea_Run4_PPS+DESI
-grea_Run5_CMB-SPA+PPS+DESI	#9467bd	grea_Run5_CMB-SPA+PPS+DESI
-grea_Run7_CMB-SPA+PP	#8c564b	grea_Run7_CMB-SPA+PP
+grea_Run4_PPS+DESI	#ff7f0e	grea_Run4_PPS+DESI
+grea_Run2_CMB-SPA	#2ca02c	grea_Run2_CMB-SPA
+grea_Run6_CMB-SPA+DESI	#d62728	grea_Run6_CMB-SPA+DESI
+grea_Run7_CMB-SPA+PP	#9467bd	grea_Run7_CMB-SPA+PP
+grea_Run3_CMB-SPA+PP+DESI	#8c564b	grea_Run3_CMB-SPA+PP+DESI
+grea_Run5_CMB-SPA+PPS+DESI	#e377c2	grea_Run5_CMB-SPA+PPS+DESI

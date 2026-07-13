@@ -1,0 +1,84 @@
+% ===========================================================================
+%  GREA model description for the CosmoVerse Cosmology Compilation (CCG)
+%  Short title (for figures): GREA
+%
+%  Compile with:   pdflatex -> bibtex -> pdflatex -> pdflatex
+%  Requires:       revtex4-2, amsmath, amssymb, and references_3.bib
+%  Bibliography:   set \bibliography{...} to match your .bib filename.
+%  Note:           This is a self-contained version. When merging into the CCG
+%                  compilation, keep only the \section block and drop the
+%                  title/author/abstract wrapper. No custom commands are used.
+% ===========================================================================
+
+\documentclass[aps,prd,reprint,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{The GREA model: description for the CosmoVerse Cosmology Compilation}
+
+\author{Simone D'Onofrio}
+\affiliation{Institute of Space Sciences (ICE, CSIC), Campus UAB, Carrer de Can Magrans s/n, 08193 Barcelona, Spain}
+
+\author{Eleonora Di Valentino}
+\affiliation{School of Mathematical and Physical Sciences, University of Sheffield, Hounsfield Road,
+Sheffield S3 7RH, United Kingdom}
+
+\author{Dong Ha Lee}
+\affiliation{School of Mathematical and Physical Sciences, University of Sheffield, Hounsfield Road,
+Sheffield S3 7RH, United Kingdom}
+
+
+\date{\today}
+
+\begin{abstract}
+We summarise the General Relativistic Entropic Acceleration (GREA) model and its
+implementation in the \texttt{CLASS} Boltzmann code for the CosmoVerse Cosmology
+Compilation, detailing the modifications to the standard code, the relation to
+$\Lambda$CDM, and the priors adopted on the extra parameter.
+\end{abstract}
+
+\maketitle
+
+\section{General Relativistic Entropic Acceleration (GREA)}
+\label{sec:grea}
+\noindent\textit{Short title (figures):} \textbf{GREA}.
+\medskip
+
+General Relativistic Entropic Acceleration (GREA) attributes the present accelerated
+expansion to the entropy growth of the causal (cosmological) horizon, rather than to a
+cosmological constant or a dark-energy
+field~\cite{Garcia-Bellido:2021idr,Espinosa-Portales:2021cac}. In the covariant,
+out-of-equilibrium thermodynamic formulation of general relativity, this entropy
+production sources an entropic force that enters the Einstein equations as an effective
+bulk viscosity with negative pressure, so that $\Lambda = 0$
+throughout~\cite{Espinosa-Portales:2021cac,Garcia-Bellido:2024qau}. The dynamics is set by
+a single dimensionless parameter $\alpha$, the ratio of the causal-horizon distance to the
+entropic curvature scale $k^{-1/2}$. Because the entropic term scales as $\sinh(2\tau)$ in
+the dimensionless time $\tau$, it is negligible at early times and relevant only at low
+redshift, shifting the onset of acceleration and easing the coincidence
+problem~\cite{Garcia-Bellido:2024qau}. The effective equation of state $w(a)$ evolves with
+redshift and shows a transient phantom crossing at $z \lesssim 2$, in line with earlier
+background-level analyses~\cite{Arjona:2021uxs,Calderon:2025dhj,Graziotti:2026qzl}.
+
+We implement GREA in \texttt{CLASS}~\cite{Blas:2011rf} (v3.3.4) as a new case of the fluid
+equation-of-state module (\texttt{fluid\_equation\_of\_state\,=\,GREA}). The entropic
+sector replaces the cosmological constant, with its density fixed by spatial flatness,
+$\Omega_{\mathrm{GREA}} = 1 - \Omega_m - \Omega_r$; the tabulated $w(a)$ is interpolated at
+run time, the Friedmann equation reads $H^2 = \rho_{\mathrm{tot}}$ with no explicit
+$\Omega_k a^{-2}$ term, and perturbations use the parametrised post-Friedmann (PPF)
+prescription~\cite{Fang:2008sn} (\texttt{use\_ppf\,=\,yes}, $c_s^2 = 1$) to cross the
+phantom divide. All other sectors match $\Lambda$CDM. GREA is not nested within
+$\Lambda$CDM: no parameter value reproduces it exactly, and as $\alpha \to 0$ the entropic
+term vanishes, leaving a decelerating, matter-dominated ($\Lambda = 0$) universe rather
+than flat $\Lambda$CDM. We sample the dimensionless combination $\sqrt{k}\,\eta_0$
+(\texttt{sqrt\_k\_eta0}), a monotonic proxy for $\alpha$, with a flat prior
+$\sqrt{k}\,\eta_0 \in [2.5, 4.5]$; $\alpha$ is recovered by inversion. The standard
+$\Lambda$CDM parameters keep their usual priors and no GREA nuisance parameters are added.
+
+\bibliography{references}
+
+\end{document}

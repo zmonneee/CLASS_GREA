@@ -1,0 +1,52 @@
+ -log(Like) = 1117.9918498657717
+  chi-sq    = 2235.9836997315433
+
+    1  3.061210919e+00   logA                                                            \log(10^{10} A_\mathrm{s})
+    2  9.732481878e-01   n_s                                                             n_\mathrm{s}
+    3  1.041748944e+00   theta_s_100                                                     100\theta_\mathrm{s}
+    5  6.031335906e-02   tau_reio                                                        \tau_\mathrm{reio}
+    6  2.246465037e-02   omega_b                                                         \Omega_\mathrm{b} h^2
+    7  1.183434315e-01   omega_cdm                                                       \Omega_\mathrm{c} h^2
+    8  1.001055820e+00   Tcal                                                            T_{\rm cal}
+    9  1.008953169e+00   Ecal                                                            E_{\rm cal}
+   34  1.004786689e+00   A_planck                                                        A_{\rm planck}
+   36  1.003050548e+00   P_act                                                           p_{\rm ACT}
+
+   12  0.06              m_ncdm                                                          m\ ncdm
+
+    4  6.815745794e+01   H0                                                              H_0
+   10  3.044969819e-01   Omega_m                                                         \Omega_\mathrm{m}
+   11  1.414522178e-01   omegamh2                                                        \Omega_\mathrm{m} h^2
+   13  6.954249065e-01   Omega_Lambda                                                    \Omega_\Lambda
+   14  2.135339876e-09   A_s                                                             A_\mathrm{s}
+   15  2.456084569e-01   YHe                                                             Y_\mathrm{P}
+   16  8.232986450e+00   z_reio                                                          z_\mathrm{re}
+   17  8.137398534e-01   sigma8                                                          \sigma_8
+   18  9.856639986e-01   s8h5                                                            \sigma_8/h^{0.5}
+   19  4.490317836e-01   s8omegamp5                                                      \sigma_8 \Omega_\mathrm{m}^{0.5}
+   20  6.044791624e-01   s8omegamp25                                                     \sigma_8 \Omega_\mathrm{m}^{0.25}
+   21  2.135339876e+00   A                                                               10^9 A_\mathrm{s}
+   22  1.892690020e+00   clamp                                                           10^9 A_\mathrm{s} e^{-2\tau}
+   23  1.376858198e+01   age                                                             {\rm{Age}}/\mathrm{Gyr}
+   24  1.473651840e+02   rs_drag                                                         r_\mathrm{drag}
+   25  1.084348653e+03   z_star                                                          z_\star
+   26  1.451888230e+02   rs_star                                                         r_\star
+   27  1.280754128e+01   da_star                                                         D_A(z_\star)
+   28  1.059984993e+03   z_d                                                             z_\mathrm{d}
+   29  3.359779783e+03   z_eq                                                            z_\mathrm{eq}
+   30  1.026303414e-02   k_eq                                                            k_\mathrm{eq}
+   31  8.198161231e-01   S8                                                              S_8
+   32  9.641023583e-02   omegamh3                                                        \Omega_\mathrm{m} h^3
+   33  1.004403633e+02   rs_d_h                                                          r_\mathrm{drag} h
+   35  1.004786689e+00   A_act                                                           A_{\rm ACT}
+   37  1.471252492e+01   chi2__BAO                                                       \chi^2_\mathrm{BAO}
+   38  2.422712413e+02   chi2__CMB                                                       \chi^2_\mathrm{CMB}
+   39  1.634367989e+03   chi2__SN                                                        \chi^2_\mathrm{SN}
+   40  1.471252492e+01   chi2__bao.desi_dr2                                              \chi^2_{\rm bao.desi\ dr2}
+   41  1.634367989e+03   chi2__sn.desdovekie                                             \chi^2_{\rm sn.desdovekie}
+   42  2.202674602e+01   chi2__planck_2018_lowl.TT                                       \chi^2_{\rm planck\ 2018\ lowl.TT}
+   43  2.202444952e+02   chi2__act_dr6_cmbonly.PlanckActCut                              \chi^2_{\rm act\ dr6\ cmbonly.PlanckActCut}
+   44  1.602387233e+02   chi2__act_dr6_cmbonly.ACTDR6CMBonly                             \chi^2_{\rm act\ dr6\ cmbonly.ACTDR6CMBonly}
+   45  1.980370234e+01   chi2__act_dr6_lenslike.ACTDR6LensLike                           \chi^2_{\rm act\ dr6\ lenslike.ACTDR6LensLike}
+   46  1.620835114e+02   chi2__spt3g_d1_tne                                              \chi^2_{\rm spt3g\ d1\ tne}
+   47  2.326598156e+01   chi2__muse3glike.cobaya.spt3g_2yr_delensed_ee_optimal_pp_muse   \chi^2_{\rm muse3glike.cobaya.spt3g\ 2yr\ delensed\ ee\ optimal\ pp\ muse}
